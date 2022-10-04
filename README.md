@@ -1,5 +1,6 @@
-# PW
-Web Development
+# Programación Web
+
+Prácticas de la asignatura
 
 - [x] P1-E1
 - [ ] P1-E2

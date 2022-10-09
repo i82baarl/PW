@@ -1,5 +1,9 @@
 package E1.User;
+
 import java.util.Date;
+import java.util.Calendar;
+import java.time.LocalDateTime;
+import java.time.*;
 
 public class User {
 
@@ -15,6 +19,8 @@ public class User {
     
     private String mail;
 
+    private int userId;
+    
     // Constructores
     
     public User () {
@@ -26,33 +32,40 @@ public class User {
     	this.firstName = firstName;
         this.secondName = secondName;
         this.birthDate = birthDate;
-        this.registerDate = new Date();
         this.mail = mail;
+        
+        LocalDateTime todaysDate = LocalDateTime.now();
+        ZoneId defaultZoneId = ZoneId.systemDefault();
+        this.registerDate = Date.from(todaysDate.atZone(defaultZoneId).toInstant());
         
     }
 
     // Observadores
     
-    public String getfirstName() {
+    public String getFirstName() {
     	return this.firstName;
     }
     
-    public String getsecondName() {
+    public String getSecondName() {
     	return this.secondName;
     }
     
-    public Date getbirthDate() {
+    public Date getBirthDate() {
     	return this.birthDate;
     }
     
-    public Date getregisterDate() {
+    public Date getRegisterDate() {
     	return this.registerDate;
     }
    
-    public String getmail() {
+    public String getMail() {
     	return this.mail;
     }
-
+    
+    public int getUserId() {
+    	return this.userId;
+    }
+    
     // Modificadores
     
     public void setFirstName(String firstName) {
@@ -74,6 +87,10 @@ public class User {
     public void setMail(String mail) {
     	this.mail = mail;
     }
+    
+    public void setUserId (int userId) {
+    	this.userId = userId;
+    }
 
     // Metodos auxiliares
     
@@ -83,12 +100,20 @@ public class User {
               "\nApellido: " + this.secondName +
               "\nFecha de nacimiento: " + this.birthDate +
               "\nFecha de inscripcion: " + this.registerDate +
-              "\nCorreo: " + this.mail;
+              "\nCorreo: " + this.mail +
+              "\nId usuario: " + this.userId;
     }
     
     public int calculateSeniority (Date actualDate) {
         int registrado;
-        registrado = actualDate.getYear() - registerDate.getYear();
-        return registrado;
+        
+		Calendar calendarA = Calendar.getInstance();
+		Calendar calendarP = Calendar.getInstance();
+		
+		calendarA.setTime(actualDate);
+		calendarP.setTime(this.registerDate);
+		
+		registrado = calendarA.get(Calendar.YEAR) - calendarP.get(Calendar.YEAR);
+		return registrado;
     }
 }

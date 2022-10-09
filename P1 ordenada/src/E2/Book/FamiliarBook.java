@@ -10,7 +10,26 @@ public class FamiliarBook extends Book {
 	
 	// Constructor
 	
-	public FamiliarBook() {
+	public FamiliarBook(int nAdults, int nKids) {
+		this.nOfKids = nKids;
+		this.nOfAdults = nAdults;
+	}
+	
+	// Observadores
+	
+	public int getNOfKids() {
+		return this.nOfKids;
+	}
+	public int getnOfAdults() {
+		return this.nOfAdults;
+	}
 		
+	// Modificadores
+		
+	public void setNOfKids(int nKids) {
+		this.nOfKids = nKids;
+	}
+	public void setnOfAdults(int nAdults) {
+		this.nOfAdults = nAdults;
 	}
 }

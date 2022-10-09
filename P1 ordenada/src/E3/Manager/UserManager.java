@@ -36,10 +36,6 @@ public class UserManager {
 	public User getActiveUser() {
 	    return activeUser;
 	}
-	public int getUserId() {
-	    return userId;
-	}
-	
 	
 	// Modificadores
 	
@@ -54,7 +50,7 @@ public class UserManager {
 	}
 	
 	// Metodos auxiliares
-	
+	/*
 	public User findUser(int userId) {
 	    for (int i = 0; i < users.size(); i++) {
 	    	if (users.get(i).getUserId() == userId) {
@@ -63,11 +59,8 @@ public class UserManager {
 	    	}
 	    }
 	    return null;
-	}
-	public boolean addUser(User user) {
-	    users.add(user);
-	    return true;
-	}
+	}*/
+	
 	public boolean modifyUser(User user) {
 	    for (int i = 0; i < users.size(); i++) {
 	    	if (users.get(i).getUserId() == user.getUserId()) {
@@ -84,12 +77,24 @@ public class UserManager {
 	    }
 	    return false;
 	}
+	
 	public boolean deleteUser(int deleteUserId) {
 	    return users.removeIf( n -> ( n.getUserId() == deleteUserId && n.getUserId() != activeUser.getUserId() ));
 	}
 	public boolean registerUser(User user) {
-	    users.add(user);
-	    userId += 1;
+		for (int i = 0; i < users.size(); i++) {
+	    	if (users.get(i).getUserId() == user.getUserId()) {
+	    		return false;
+	    	}
+	    }
+		users.add(user);
+		//user.setUserId(users.get(users.size()-1));
 	    return true;
+	}
+	
+	public void listUser () {
+		for (int i = 0; i < users.size(); i++) {
+			System.out.println(users.get(i).toString() + "\n");
+		}
 	}
 }

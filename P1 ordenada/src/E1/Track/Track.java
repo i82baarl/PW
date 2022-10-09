@@ -18,6 +18,8 @@ public class Track {
 	
 	private List<Kart> karts;
 	
+	private int id;
+	
 	// Constructores de la Clase Pista ( Track )
 	
 	public Track() {
@@ -48,6 +50,10 @@ public class Track {
 		return this.max;
 	}
 	
+	public int getId() {
+		return this.id;
+	}
+	
 	// Modificadores de la Clase Pista ( Track )
 	
 	public void setName(String name) {
@@ -61,6 +67,10 @@ public class Track {
 	}
 	public void setMax(int max) {
 		this.max = max;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	// Metodos auxiliares

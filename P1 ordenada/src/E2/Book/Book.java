@@ -13,13 +13,11 @@ public abstract class Book {
 	
 	protected int duration; // Tiempo expresado en minutos (entero)
 	
-	protected String trackId; // Nombre del circuito (debe existir)
+	protected int trackId; // Nombre del circuito (debe existir)
 	
 	protected float price; // Precio en euros (flotante)
 	
 	protected int discount; // Descuento por antiguedad
-	
-	
 	
 	// Constructores
 	
@@ -41,7 +39,7 @@ public abstract class Book {
 	public int getDuration() {
     	return this.duration;
     }
-	public String getTrackId() {
+	public int getTrackId() {
     	return this.trackId;
     }
 	public float getPrice() {
@@ -65,7 +63,7 @@ public abstract class Book {
 	public void setDuration(int duration) {
     	this.duration = duration;
     }
-	public void setTrackId(String trackId) {
+	public void setTrackId(int trackId) {
     	this.trackId = trackId;
     }
 	public void setPrice(float price) {

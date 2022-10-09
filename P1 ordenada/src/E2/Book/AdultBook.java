@@ -8,7 +8,19 @@ public class AdultBook extends Book {
 	
 	// Constructor
 	
-	public AdultBook() {
+	public AdultBook(int nAdults) {
+		this.nOfAdults = nAdults;
+	}
+	
+	// Observadores
+	
+	public int getnOfAdults() {
+		return this.nOfAdults;
+	}
 		
+	// Modificadores
+		
+	public void setnOfAdults(int nAdults) {
+		this.nOfAdults = nAdults;
 	}
 }

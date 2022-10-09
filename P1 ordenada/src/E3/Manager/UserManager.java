@@ -60,6 +60,11 @@ public class UserManager {
 	    }
 	    return null;
 	}*/
+
+	public void addUser(User user) {
+		
+		users.add(user);
+	}
 	
 	public boolean modifyUser(User user) {
 	    for (int i = 0; i < users.size(); i++) {

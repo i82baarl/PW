@@ -12,6 +12,8 @@ public class Kart {
 	
 	private Estado estado;
 	
+	private int trackId;
+	
 	// Constructores
 	
 	public Kart()
@@ -45,6 +47,9 @@ public class Kart {
 		return this.estado;
 	}
 	
+	public int getTrackId() {
+		return this.trackId;
+	}
 	// Modificadores
 	
 	public void setIdentificador(int identificador)
@@ -60,6 +65,10 @@ public class Kart {
 	public void setEstado(Estado estado)
 	{
 		this.estado = estado;
+	}
+	
+	public void setTrackId(int trackId) {
+		this.trackId = trackId;
 	}
 	
 	// Metodos auxiliares

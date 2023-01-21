@@ -7,6 +7,6 @@ Prácticas de la asignatura
   - [x] Clases
   - [x] Factory
 - [ ] P1-E3
-  - [x] Gestor user
+  - [x] Gestor usuarios
   - [ ] Gestor pistas
   - [ ] Gestor reservas
